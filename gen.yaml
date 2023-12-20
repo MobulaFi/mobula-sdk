@@ -6,7 +6,7 @@ management:
   generationVersion: 2.221.0
 generation:
   comments: {}
-  sdkClassName: mobula
+  sdkClassName: SDK
   repoURL: https://github.com/anouci/mobula-api-sdk.git
   usageSnippets:
     optionalPropertyRendering: withExample
@@ -20,7 +20,7 @@ features:
     globalServerURLs: 2.82.1
 typescript:
   version: 0.1.0
-  author: Mobula Labs
+  author: Speakeasy
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: true
   imports:
@@ -34,5 +34,5 @@ typescript:
   inputModelSuffix: input
   maxMethodParams: 4
   outputModelSuffix: output
-  packageName: mobula-sdk
+  packageName: openapi
   templateVersion: v1
