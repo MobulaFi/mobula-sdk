@@ -34,7 +34,7 @@ typescript:
       webhooks: models/webhooks
   inputModelSuffix: input
   installationURL: https://github.com/anouci/mobula-api-sdk
-  maxMethodParams: 4
+  maxMethodParams: 0
   outputModelSuffix: output
   packageName: openapi
   repoSubDirectory: .
