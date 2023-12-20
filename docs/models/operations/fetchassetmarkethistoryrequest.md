@@ -1,0 +1,11 @@
+# FetchAssetMarketHistoryRequest
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `asset`                                                                                  | *string*                                                                                 | :heavy_check_mark:                                                                       | The asset you want to target - asset name only works for assets listed on Mobula.        |
+| `blockchain`                                                                             | *string*                                                                                 | :heavy_minus_sign:                                                                       | Blockchain of the asset - only mandatory if asset is sent as smart-contract.             |
+| `from`                                                                                   | *number*                                                                                 | :heavy_minus_sign:                                                                       | JS Timestamp (milliseconds) of the beginning of the timeframe (if not provided, genesis) |
+| `to`                                                                                     | *number*                                                                                 | :heavy_minus_sign:                                                                       | JS Timestamp (milliseconds) of the end of the timeframe (if not provided, end)           |

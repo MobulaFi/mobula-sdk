@@ -1,0 +1,10 @@
+# FetchAssetMarketDataRequest
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       | Example                                                                           |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `asset`                                                                           | *string*                                                                          | :heavy_minus_sign:                                                                | The asset you want to target - asset name only works for assets listed on Mobula. | Bitcoin                                                                           |
+| `blockchain`                                                                      | *string*                                                                          | :heavy_minus_sign:                                                                | Blockchain of the asset - only mandatory if asset is sent as smart-contract.      |                                                                                   |
+| `symbol`                                                                          | *string*                                                                          | :heavy_minus_sign:                                                                | Symbol of the asset - only mandatory if no asset name/contract is provided        | BTC                                                                               |
