@@ -8,12 +8,11 @@ generation:
   comments: {}
   sdkClassName: SDK
   repoURL: https://github.com/anouci/mobula-api-sdk.git
-  maintainOpenAPIOrder: true
   usageSnippets:
     optionalPropertyRendering: withExample
-  fixes:
-    nameResolutionDec2023: true
   useClassNamesForArrayFields: true
+  fixes:
+    nameResolutionDec2023: false
 features:
   typescript:
     core: 3.3.9
@@ -22,20 +21,18 @@ features:
 typescript:
   version: 0.1.0
   author: Speakeasy
-  clientServerStatusCodesAsErrors: true
+  clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: true
   imports:
     option: openapi
     paths:
-      callbacks: models/callbacks
-      errors: models/errors
-      operations: models/operations
-      shared: models/components
-      webhooks: models/webhooks
+      callbacks: sdk/models/callbacks
+      errors: sdk/models/errors
+      operations: sdk/models/operations
+      shared: sdk/models/shared
+      webhooks: sdk/models/webhooks
   inputModelSuffix: input
-  installationURL: https://github.com/anouci/mobula-api-sdk
-  maxMethodParams: 0
+  maxMethodParams: 4
   outputModelSuffix: output
   packageName: openapi
-  repoSubDirectory: .
-  templateVersion: v2
+  templateVersion: v1
