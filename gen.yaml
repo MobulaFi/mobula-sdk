@@ -20,7 +20,7 @@ features:
     globalServerURLs: 2.82.1
 typescript:
   version: 0.1.0
-  author: Speakeasy
+  author: Mobula Labs
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: true
   imports:
@@ -34,5 +34,5 @@ typescript:
   inputModelSuffix: input
   maxMethodParams: 4
   outputModelSuffix: output
-  packageName: openapi
+  packageName: mobula-sdk
   templateVersion: v1
