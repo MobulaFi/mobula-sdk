@@ -1,6 +1,13 @@
 servers:
   - url: https://api.mobula.io/api/1
 components:
+  securitySchemes:
+    APIKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+security:
+  - APIKeyAuth: []
   schemas:
     Asset:
       type: object
