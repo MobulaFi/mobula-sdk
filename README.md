@@ -22,13 +22,13 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 ### NPM
 
 ```bash
-npm add https://github.com/anouci/mobula-api-sdk
+npm add https://github.com/anouci/mobula-sdk
 ```
 
 ### Yarn
 
 ```bash
-yarn add https://github.com/anouci/mobula-api-sdk
+yarn add https://github.com/anouci/mobula-sdk
 ```
 <!-- End SDK Installation [installation] -->
 
