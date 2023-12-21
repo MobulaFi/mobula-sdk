@@ -1238,6 +1238,7 @@ paths:
                           description: Timestamp of the last update
   /wallet/transactions:
     get:
+      x-speakeasy-usage-example: true
       summary: Fetch Wallet Transactions
       description: Retrieve all transactions for a specified wallet within a given timeframe.
       operationId: fetchWalletTransactions
