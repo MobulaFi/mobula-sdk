@@ -43,6 +43,7 @@ src/sdk/models/shared/multipair.ts
 src/sdk/models/shared/wallethistoryresponse.ts
 src/sdk/models/shared/transaction.ts
 src/sdk/models/shared/assettransaction.ts
+src/sdk/models/shared/security.ts
 src/sdk/models/errors/index.ts
 src/sdk/models/operations/index.ts
 src/sdk/models/shared/index.ts
@@ -110,6 +111,7 @@ docs/sdk/models/shared/wallethistoryresponsedata.md
 docs/sdk/models/shared/wallethistoryresponse.md
 docs/sdk/models/shared/transaction.md
 docs/sdk/models/shared/assettransaction.md
+docs/sdk/models/shared/security.md
 docs/sdks/mobula/README.md
 USAGE.md
 .gitattributes

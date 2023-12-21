@@ -4,7 +4,9 @@ import { Mobula } from "mobula-sdk";
 import { Order } from "mobula-sdk/dist/sdk/models/operations";
 
 async function run() {
-    const sdk = new Mobula();
+    const sdk = new Mobula({
+        apiKeyAuth: "<YOUR_API_KEY_HERE>",
+    });
 
     const res = await sdk.fetchWalletTransactions({
         blockchains: "56,Ethereum",

@@ -29,7 +29,9 @@ Mobula: A tool that allows the user to fetch real-time data for all crypto metri
 import { Mobula } from "mobula-sdk";
 
 async function run() {
-  const sdk = new Mobula();
+  const sdk = new Mobula({
+    apiKeyAuth: "<YOUR_API_KEY_HERE>",
+  });
 
   const res = await sdk.searchCryptoByName({
     name: "bitcoin",
@@ -70,7 +72,9 @@ Get all crypto data with extra fields as needed
 import { Mobula } from "mobula-sdk";
 
 async function run() {
-  const sdk = new Mobula();
+  const sdk = new Mobula({
+    apiKeyAuth: "<YOUR_API_KEY_HERE>",
+  });
 
   const res = await sdk.fetchAllCryptoDetails({
     fields: "blockchains,contracts",
@@ -111,7 +115,9 @@ Get the market metrics for any asset
 import { Mobula } from "mobula-sdk";
 
 async function run() {
-  const sdk = new Mobula();
+  const sdk = new Mobula({
+    apiKeyAuth: "<YOUR_API_KEY_HERE>",
+  });
 
   const res = await sdk.fetchAssetMarketData({
     asset: "Bitcoin",
@@ -153,7 +159,9 @@ Get the market metrics of an asset over a given timeframe
 import { Mobula } from "mobula-sdk";
 
 async function run() {
-  const sdk = new Mobula();
+  const sdk = new Mobula({
+    apiKeyAuth: "<YOUR_API_KEY_HERE>",
+  });
 
   const res = await sdk.fetchAssetMarketHistory({
     asset: "string",
@@ -192,7 +200,9 @@ run();
 import { Mobula } from "mobula-sdk";
 
 async function run() {
-  const sdk = new Mobula();
+  const sdk = new Mobula({
+    apiKeyAuth: "<YOUR_API_KEY_HERE>",
+  });
 
   const res = await sdk.fetchAssetMetadata({
     asset: "string",
@@ -233,7 +243,9 @@ Retrieve trade history for a given asset.
 import { Mobula } from "mobula-sdk";
 
 async function run() {
-  const sdk = new Mobula();
+  const sdk = new Mobula({
+    apiKeyAuth: "<YOUR_API_KEY_HERE>",
+  });
 
   const res = await sdk.fetchAssetTradeHistory({
     asset: "string",
@@ -273,7 +285,9 @@ run();
 import { Mobula } from "mobula-sdk";
 
 async function run() {
-  const sdk = new Mobula();
+  const sdk = new Mobula({
+    apiKeyAuth: "<YOUR_API_KEY_HERE>",
+  });
 
   const res = await sdk.fetchMultipleAssetMarketData({});
 
@@ -312,7 +326,9 @@ Get the market metrics for any DEX pair
 import { Mobula } from "mobula-sdk";
 
 async function run() {
-  const sdk = new Mobula();
+  const sdk = new Mobula({
+    apiKeyAuth: "<YOUR_API_KEY_HERE>",
+  });
 
   const res = await sdk.fetchPairMarketData({
     address: "0x6488f911c6cd86c289aa319c5a826dcf8f1ca065",
@@ -355,7 +371,9 @@ Fetch all DEX pairs from a specific asset
 import { Mobula } from "mobula-sdk";
 
 async function run() {
-  const sdk = new Mobula();
+  const sdk = new Mobula({
+    apiKeyAuth: "<YOUR_API_KEY_HERE>",
+  });
 
   const res = await sdk.fetchPairsMarketData({
     asset: "Bitcoin",
@@ -397,7 +415,9 @@ Get the historical balance of any EVM-compatible wallets, at any time
 import { Mobula } from "mobula-sdk";
 
 async function run() {
-  const sdk = new Mobula();
+  const sdk = new Mobula({
+    apiKeyAuth: "<YOUR_API_KEY_HERE>",
+  });
 
   const res = await sdk.fetchWalletHistoryBalance({
     blockchains: "56,Ethereum",
@@ -439,7 +459,9 @@ Get the portfolio of holdings from any EVM-compatible wallets, at any time
 import { Mobula } from "mobula-sdk";
 
 async function run() {
-  const sdk = new Mobula();
+  const sdk = new Mobula({
+    apiKeyAuth: "<YOUR_API_KEY_HERE>",
+  });
 
   const res = await sdk.fetchWalletHoldings({
     blockchains: "56,Ethereum",
@@ -481,7 +503,9 @@ Get Portfolio
 import { Mobula } from "mobula-sdk";
 
 async function run() {
-  const sdk = new Mobula();
+  const sdk = new Mobula({
+    apiKeyAuth: "<YOUR_API_KEY_HERE>",
+  });
 
   const res = await sdk.fetchWalletNFTs({
     blockchains: "56,Ethereum",
@@ -524,7 +548,9 @@ import { Mobula } from "mobula-sdk";
 import { Order } from "mobula-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new Mobula();
+  const sdk = new Mobula({
+    apiKeyAuth: "<YOUR_API_KEY_HERE>",
+  });
 
   const res = await sdk.fetchWalletTransactions({
     blockchains: "56,Ethereum",

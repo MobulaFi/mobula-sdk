@@ -42,7 +42,9 @@ import { Mobula } from "mobula-sdk";
 import { Order } from "mobula-sdk/dist/sdk/models/operations";
 
 async function run() {
-    const sdk = new Mobula();
+    const sdk = new Mobula({
+        apiKeyAuth: "<YOUR_API_KEY_HERE>",
+    });
 
     const res = await sdk.fetchWalletTransactions({
         blockchains: "56,Ethereum",
@@ -94,7 +96,9 @@ Example
 import { Mobula } from "mobula-sdk";
 
 async function run() {
-    const sdk = new Mobula();
+    const sdk = new Mobula({
+        apiKeyAuth: "<YOUR_API_KEY_HERE>",
+    });
 
     let res;
     try {
@@ -137,6 +141,7 @@ import { Mobula } from "mobula-sdk";
 async function run() {
     const sdk = new Mobula({
         serverIdx: 0,
+        apiKeyAuth: "<YOUR_API_KEY_HERE>",
     });
 
     const res = await sdk.searchCryptoByName({
@@ -162,6 +167,7 @@ import { Mobula } from "mobula-sdk";
 async function run() {
     const sdk = new Mobula({
         serverURL: "https://api.mobula.io/api/1",
+        apiKeyAuth: "<YOUR_API_KEY_HERE>",
     });
 
     const res = await sdk.searchCryptoByName({
@@ -196,6 +202,40 @@ const httpClient = axios.create({
 const sdk = new Mobula({defaultClient: httpClient});
 ```
 <!-- End Custom HTTP Client [http-client] -->
+
+<!-- Start Authentication [security] -->
+## Authentication
+
+### Per-Client Security Schemes
+
+This SDK supports the following security scheme globally:
+
+| Name         | Type         | Scheme       |
+| ------------ | ------------ | ------------ |
+| `apiKeyAuth` | apiKey       | API key      |
+
+To authenticate with the API the `apiKeyAuth` parameter must be set when initializing the SDK client instance. For example:
+```typescript
+import { Mobula } from "mobula-sdk";
+
+async function run() {
+    const sdk = new Mobula({
+        apiKeyAuth: "<YOUR_API_KEY_HERE>",
+    });
+
+    const res = await sdk.searchCryptoByName({
+        name: "bitcoin",
+    });
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+}
+
+run();
+
+```
+<!-- End Authentication [security] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

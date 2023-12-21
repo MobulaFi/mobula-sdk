@@ -11,6 +11,7 @@ export * from "./multidataresponse";
 export * from "./multipair";
 export * from "./pair";
 export * from "./searchcryptodata";
+export * from "./security";
 export * from "./tradehistoryresponse";
 export * from "./transaction";
 export * from "./wallethistoryresponse";
