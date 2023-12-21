@@ -44,9 +44,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "v1";
-    sdkVersion = "0.2.0";
+    sdkVersion = "0.2.1";
     genVersion = "2.223.0";
-    userAgent = "speakeasy-sdk/typescript 0.2.0 2.223.0 v1 mobula-sdk";
+    userAgent = "speakeasy-sdk/typescript 0.2.1 2.223.0 v1 mobula-sdk";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -672,71 +672,6 @@ export class Mobula {
                     res.object = utils.objectToClass(
                         JSON.parse(decodedRes),
                         operations.FetchPairsMarketDataResponseBody
-                    );
-                } else {
-                    throw new errors.SDKError(
-                        "unknown content-type received: " + responseContentType,
-                        httpRes.status,
-                        decodedRes,
-                        httpRes
-                    );
-                }
-                break;
-        }
-
-        return res;
-    }
-
-    /**
-     * Swap
-     */
-    async fetchSwapQuote(
-        req: operations.FetchSwapQuoteRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.FetchSwapQuoteResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.FetchSwapQuoteRequest(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const operationUrl: string = baseURL.replace(/\/$/, "") + "/quote";
-        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers: RawAxiosRequestHeaders = { ...config?.headers };
-        const queryParams: string = utils.serializeQueryParams(req);
-        headers["Accept"] = "application/json";
-
-        headers["user-agent"] = this.sdkConfiguration.userAgent;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: operationUrl + queryParams,
-            method: "get",
-            headers: headers,
-            responseType: "arraybuffer",
-            ...config,
-        });
-
-        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.FetchSwapQuoteResponse = new operations.FetchSwapQuoteResponse({
-            statusCode: httpRes.status,
-            contentType: responseContentType,
-            rawResponse: httpRes,
-        });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status == 200:
-                if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.object = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        operations.FetchSwapQuoteResponseBody
                     );
                 } else {
                     throw new errors.SDKError(

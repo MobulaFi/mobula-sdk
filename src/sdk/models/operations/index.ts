@@ -10,7 +10,6 @@ export * from "./fetchassettradehistory";
 export * from "./fetchmultipleassetmarketdata";
 export * from "./fetchpairmarketdata";
 export * from "./fetchpairsmarketdata";
-export * from "./fetchswapquote";
 export * from "./fetchwallethistorybalance";
 export * from "./fetchwalletholdings";
 export * from "./fetchwalletnfts";

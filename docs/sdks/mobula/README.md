@@ -16,7 +16,6 @@ Mobula: A tool that allows the user to fetch real-time data for all crypto metri
 * [fetchMultipleAssetMarketData](#fetchmultipleassetmarketdata)
 * [fetchPairMarketData](#fetchpairmarketdata) - Get the market metrics for any DEX pair
 * [fetchPairsMarketData](#fetchpairsmarketdata) - Fetch all DEX pairs from a specific asset
-* [fetchSwapQuote](#fetchswapquote) - Swap
 * [fetchWalletHistoryBalance](#fetchwallethistorybalance) - Get the historical balance of any EVM-compatible wallets, at any time
 * [fetchWalletHoldings](#fetchwalletholdings) - Fetch Wallet Portfolio
 * [fetchWalletNFTs](#fetchwalletnfts) - Get Portfolio
@@ -382,55 +381,6 @@ run();
 ### Response
 
 **Promise<[operations.FetchPairsMarketDataResponse](../../sdk/models/operations/fetchpairsmarketdataresponse.md)>**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
-## fetchSwapQuote
-
-Swap
-
-### Example Usage
-
-```typescript
-import { Mobula } from "mobula-sdk";
-import { TypeT } from "mobula-sdk/dist/sdk/models/operations";
-
-async function run() {
-  const sdk = new Mobula();
-
-  const res = await sdk.fetchSwapQuote({
-    amount: 39020329732097,
-    chain: "Ethereum",
-    fromAddress: "0xbb663a119193cA68512c351b0fdfDEB9c22Dc416",
-    fromToken: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    receiver: "0xbb663a119193cA68512c351b0fdfDEB9c22Dc416",
-    slippage: 0.5,
-    toToken: "0xc944e90c64b2c07662a292be6244bdf05cda44a7",
-    type: TypeT.Best,
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.FetchSwapQuoteRequest](../../sdk/models/operations/fetchswapquoterequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
-
-
-### Response
-
-**Promise<[operations.FetchSwapQuoteResponse](../../sdk/models/operations/fetchswapquoteresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

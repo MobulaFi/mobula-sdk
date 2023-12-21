@@ -27,7 +27,6 @@ src/sdk/models/operations/fetchassettradehistory.ts
 src/sdk/models/operations/fetchmultipleassetmarketdata.ts
 src/sdk/models/operations/fetchpairmarketdata.ts
 src/sdk/models/operations/fetchpairsmarketdata.ts
-src/sdk/models/operations/fetchswapquote.ts
 src/sdk/models/operations/fetchwallethistorybalance.ts
 src/sdk/models/operations/fetchwalletholdings.ts
 src/sdk/models/operations/fetchwalletnfts.ts
@@ -71,12 +70,6 @@ docs/sdk/models/operations/fetchpairsmarketdatarequest.md
 docs/sdk/models/operations/data.md
 docs/sdk/models/operations/fetchpairsmarketdataresponsebody.md
 docs/sdk/models/operations/fetchpairsmarketdataresponse.md
-docs/sdk/models/operations/typet.md
-docs/sdk/models/operations/fetchswapquoterequest.md
-docs/sdk/models/operations/tx.md
-docs/sdk/models/operations/success.md
-docs/sdk/models/operations/fetchswapquoteresponsebody.md
-docs/sdk/models/operations/fetchswapquoteresponse.md
 docs/sdk/models/operations/fetchwallethistorybalancerequest.md
 docs/sdk/models/operations/fetchwallethistorybalanceresponse.md
 docs/sdk/models/operations/fetchwalletholdingsrequest.md

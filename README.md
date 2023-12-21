@@ -39,12 +39,14 @@ yarn add https://github.com/anouci/mobula-api-sdk
 
 ```typescript
 import { Mobula } from "mobula-sdk";
+import { Order } from "mobula-sdk/dist/sdk/models/operations";
 
 async function run() {
     const sdk = new Mobula();
 
-    const res = await sdk.searchCryptoByName({
-        name: "bitcoin",
+    const res = await sdk.fetchWalletTransactions({
+        blockchains: "56,Ethereum",
+        wallet: "0xd99cB89A20822B0448936DF4f36803778CA5a003",
     });
 
     if (res.statusCode == 200) {
@@ -71,7 +73,6 @@ run();
 * [fetchMultipleAssetMarketData](docs/sdks/mobula/README.md#fetchmultipleassetmarketdata)
 * [fetchPairMarketData](docs/sdks/mobula/README.md#fetchpairmarketdata) - Get the market metrics for any DEX pair
 * [fetchPairsMarketData](docs/sdks/mobula/README.md#fetchpairsmarketdata) - Fetch all DEX pairs from a specific asset
-* [fetchSwapQuote](docs/sdks/mobula/README.md#fetchswapquote) - Swap
 * [fetchWalletHistoryBalance](docs/sdks/mobula/README.md#fetchwallethistorybalance) - Get the historical balance of any EVM-compatible wallets, at any time
 * [fetchWalletHoldings](docs/sdks/mobula/README.md#fetchwalletholdings) - Fetch Wallet Portfolio
 * [fetchWalletNFTs](docs/sdks/mobula/README.md#fetchwalletnfts) - Get Portfolio
