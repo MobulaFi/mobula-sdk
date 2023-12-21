@@ -1006,6 +1006,7 @@ paths:
                 $ref: "#/components/schemas/Asset"
   /quote:
     get:
+      x-speakeasy-ignore: true
       operationId: fetchSwapQuote
       parameters:
         - description: Blockchain of the trade
