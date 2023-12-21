@@ -1,19 +1,17 @@
 <!-- Start SDK Example Usage [usage] -->
 ```typescript
-import { SDK } from "openapi";
+import { Mobula } from "mobula-sdk";
 
 async function run() {
-    const sdk = new SDK();
+    const sdk = new Mobula();
 
-    const name = "bitcoin";
+    const res = await sdk.searchCryptoByName({
+        name: "bitcoin",
+    });
 
-    const res = await sdk.searchCryptoByName(name);
-
-    if (res?.statusCode !== 200) {
-        throw new Error("Unexpected status code: " + res?.statusCode || "-");
+    if (res.statusCode == 200) {
+        // handle response
     }
-
-    // handle response
 }
 
 run();

@@ -1,0 +1,15 @@
+# FetchSwapQuoteRequest
+
+
+## Fields
+
+| Field                                                       | Type                                                        | Required                                                    | Description                                                 | Example                                                     |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `amount`                                                    | *number*                                                    | :heavy_check_mark:                                          | Amount (x decimals) for the swap in                         | 39020329732097                                              |
+| `chain`                                                     | *string*                                                    | :heavy_check_mark:                                          | Blockchain of the trade                                     | Ethereum                                                    |
+| `fromAddress`                                               | *string*                                                    | :heavy_check_mark:                                          | Address that triggers the trade                             | 0xbb663a119193cA68512c351b0fdfDEB9c22Dc416                  |
+| `fromToken`                                                 | *string*                                                    | :heavy_check_mark:                                          | Source token for the swap                                   | 0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee                  |
+| `receiver`                                                  | *string*                                                    | :heavy_minus_sign:                                          | Address that receives the trade (by default, the sender)    | 0xbb663a119193cA68512c351b0fdfDEB9c22Dc416                  |
+| `slippage`                                                  | *number*                                                    | :heavy_check_mark:                                          | Slippage (%) accepted                                       | 0.5                                                         |
+| `toToken`                                                   | *string*                                                    | :heavy_check_mark:                                          | Destination token for the swap                              | 0xc944e90c64b2c07662a292be6244bdf05cda44a7                  |
+| `type`                                                      | [operations.TypeT](../../../sdk/models/operations/typet.md) | :heavy_minus_sign:                                          | Aggregation type (fast or best)                             | best                                                        |

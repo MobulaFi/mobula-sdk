@@ -38,20 +38,18 @@ yarn add https://github.com/anouci/mobula-api-sdk
 ### Example
 
 ```typescript
-import { SDK } from "openapi";
+import { Mobula } from "mobula-sdk";
 
 async function run() {
-    const sdk = new SDK();
+    const sdk = new Mobula();
 
-    const name = "bitcoin";
+    const res = await sdk.searchCryptoByName({
+        name: "bitcoin",
+    });
 
-    const res = await sdk.searchCryptoByName(name);
-
-    if (res?.statusCode !== 200) {
-        throw new Error("Unexpected status code: " + res?.statusCode || "-");
+    if (res.statusCode == 200) {
+        // handle response
     }
-
-    // handle response
 }
 
 run();
@@ -62,63 +60,56 @@ run();
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
 
-### [SDK](docs/sdks/sdk/README.md)
+### [Mobula SDK](docs/sdks/mobula/README.md)
 
-* [searchCryptoByName](docs/sdks/sdk/README.md#searchcryptobyname)
-* [fetchWalletNFTs](docs/sdks/sdk/README.md#fetchwalletnfts) - Get Portfolio
-* [fetchAllCryptoDetails](docs/sdks/sdk/README.md#fetchallcryptodetails) - Get all crypto data with extra fields as needed
-* [fetchAssetMarketData](docs/sdks/sdk/README.md#fetchassetmarketdata) - Get the market metrics for any asset
-* [fetchPairMarketData](docs/sdks/sdk/README.md#fetchpairmarketdata) - Get the market metrics for any DEX pair
-* [fetchPairsMarketData](docs/sdks/sdk/README.md#fetchpairsmarketdata) - Fetch all DEX pairs from a specific asset
-* [fetchAssetMarketHistory](docs/sdks/sdk/README.md#fetchassetmarkethistory) - Get the market metrics of an asset over a given timeframe
-* [fetchMultipleAssetMarketData](docs/sdks/sdk/README.md#fetchmultipleassetmarketdata)
-* [fetchAssetTradeHistory](docs/sdks/sdk/README.md#fetchassettradehistory) - Retrieve trade history for a given asset.
-* [fetchAssetMetadata](docs/sdks/sdk/README.md#fetchassetmetadata)
-* [fetchSwapQuote](docs/sdks/sdk/README.md#fetchswapquote) - Swap
-* [fetchWalletHistoryBalance](docs/sdks/sdk/README.md#fetchwallethistorybalance) - Get the historical balance of any EVM-compatible wallets, at any time
-* [fetchWalletHoldings](docs/sdks/sdk/README.md#fetchwalletholdings) - Fetch Wallet Portfolio
-* [fetchWalletTransactions](docs/sdks/sdk/README.md#fetchwallettransactions) - Fetch Wallet Transactions
+* [searchCryptoByName](docs/sdks/mobula/README.md#searchcryptobyname)
+* [fetchAllCryptoDetails](docs/sdks/mobula/README.md#fetchallcryptodetails) - Get all crypto data with extra fields as needed
+* [fetchAssetMarketData](docs/sdks/mobula/README.md#fetchassetmarketdata) - Get the market metrics for any asset
+* [fetchAssetMarketHistory](docs/sdks/mobula/README.md#fetchassetmarkethistory) - Get the market metrics of an asset over a given timeframe
+* [fetchAssetMetadata](docs/sdks/mobula/README.md#fetchassetmetadata)
+* [fetchAssetTradeHistory](docs/sdks/mobula/README.md#fetchassettradehistory) - Retrieve trade history for a given asset.
+* [fetchMultipleAssetMarketData](docs/sdks/mobula/README.md#fetchmultipleassetmarketdata)
+* [fetchPairMarketData](docs/sdks/mobula/README.md#fetchpairmarketdata) - Get the market metrics for any DEX pair
+* [fetchPairsMarketData](docs/sdks/mobula/README.md#fetchpairsmarketdata) - Fetch all DEX pairs from a specific asset
+* [fetchSwapQuote](docs/sdks/mobula/README.md#fetchswapquote) - Swap
+* [fetchWalletHistoryBalance](docs/sdks/mobula/README.md#fetchwallethistorybalance) - Get the historical balance of any EVM-compatible wallets, at any time
+* [fetchWalletHoldings](docs/sdks/mobula/README.md#fetchwalletholdings) - Fetch Wallet Portfolio
+* [fetchWalletNFTs](docs/sdks/mobula/README.md#fetchwalletnfts) - Get Portfolio
+* [fetchWalletTransactions](docs/sdks/mobula/README.md#fetchwallettransactions) - Fetch Wallet Transactions
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-All SDK methods return a response object or throw an error. If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
 
-| Error Object         | Status Code          | Content Type         |
-| -------------------- | -------------------- | -------------------- |
-| errors.ErrorResponse | 400                  | application/json     |
-| errors.SDKError      | 4xx-5xx              | */*                  |
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 Example
 
 ```typescript
-import { SDK } from "openapi";
-import * as errors from "openapi/models/errors";
+import { Mobula } from "mobula-sdk";
 
 async function run() {
-    const sdk = new SDK();
+    const sdk = new Mobula();
 
-    const assets = "string";
-    const blockchains = "string";
-    const symbols = "string";
-
-    const res = await sdk
-        .fetchMultipleAssetMarketData(assets, blockchains, symbols)
-        .catch((err) => {
-            if (err instanceof errors.ErrorResponse) {
-                console.error(err); // handle exception
-                return null;
-            } else {
-                throw err;
-            }
+    let res;
+    try {
+        res = await sdk.searchCryptoByName({
+            name: "bitcoin",
         });
-
-    if (res?.statusCode !== 200) {
-        throw new Error("Unexpected status code: " + res?.statusCode || "-");
+    } catch (err) {
+        if (err instanceof errors.SDKError) {
+            console.error(err); // handle exception
+            throw err;
+        }
     }
 
-    // handle response
+    if (res.statusCode == 200) {
+        // handle response
+    }
 }
 
 run();
@@ -137,60 +128,71 @@ You can override the default server globally by passing a server index to the `s
 | - | ------ | --------- |
 | 0 | `https://api.mobula.io/api/1` | None |
 
+#### Example
 
+```typescript
+import { Mobula } from "mobula-sdk";
+
+async function run() {
+    const sdk = new Mobula({
+        serverIdx: 0,
+    });
+
+    const res = await sdk.searchCryptoByName({
+        name: "bitcoin",
+    });
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+}
+
+run();
+
+```
 
 
 ### Override Server URL Per-Client
 
 The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
+```typescript
+import { Mobula } from "mobula-sdk";
+
+async function run() {
+    const sdk = new Mobula({
+        serverURL: "https://api.mobula.io/api/1",
+    });
+
+    const res = await sdk.searchCryptoByName({
+        name: "bitcoin",
+    });
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+}
+
+run();
+
+```
 <!-- End Server Selection [server] -->
 
 <!-- Start Custom HTTP Client [http-client] -->
 ## Custom HTTP Client
 
-The TypeScript SDK makes API calls using an `HTTPClient` that wraps the native
-[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). This
-client is a thin wrapper around `fetch` and provides the ability to attach hooks
-around the request lifecycle that can be used to modify the request or handle
-errors and response.
+The Typescript SDK makes API calls using the [axios](https://axios-http.com/docs/intro) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
 
-The `HTTPClient` constructor takes an optional `fetcher` argument that can be
-used to integrate a third-party HTTP client or when writing tests to mock out
-the HTTP client and feed in fixtures.
-
-The following example shows how to use the `"beforeRequest"` hook to to add a
-custom header and a timeout to requests and how to use the `"requestError"` hook
-to log errors:
+For example, you could specify a header for every request that your sdk makes as follows:
 
 ```typescript
-import { SDK } from "openapi";
-import { HTTPClient } from "openapi/lib/http";
+import { mobula-sdk } from "Mobula";
+import axios from "axios";
 
-const httpClient = new HTTPClient({
-  // fetcher takes a function that has the same signature as native `fetch`.
-  fetcher: (request) => {
-    return fetch(request);
-  }
-});
+const httpClient = axios.create({
+    headers: {'x-custom-header': 'someValue'}
+})
 
-httpClient.addHook("beforeRequest", (request) => {
-  const nextRequest = new Request(request, {
-    signal: request.signal || AbortSignal.timeout(5000);
-  });
-
-  nextRequest.headers.set("x-custom-header", "custom value");
-
-  return nextRequest;
-});
-
-httpClient.addHook("requestError", (error, request) => {
-  console.group("Request Error");
-  console.log("Reason:", `${error}`);
-  console.log("Endpoint:", `${request.method} ${request.url}`);
-  console.groupEnd();
-});
-
-const sdk = new SDK({ httpClient });
+const sdk = new Mobula({defaultClient: httpClient});
 ```
 <!-- End Custom HTTP Client [http-client] -->
 

@@ -1,3 +1,5 @@
+dist/
+node_modules/
 /models
 /models/errors
 /types
