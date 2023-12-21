@@ -6,8 +6,6 @@ components:
       type: apiKey
       in: header
       name: Authorization
-security:
-  - APIKeyAuth: []
   schemas:
     Asset:
       type: object
@@ -671,6 +669,8 @@ info:
   title: Mobula
   version: v1
 openapi: 3.0.1
+security:
+  - APIKeyAuth: []
 paths:
   /search:
     get:
