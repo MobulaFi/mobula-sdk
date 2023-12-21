@@ -6,7 +6,7 @@ management:
   generationVersion: 2.221.0
 generation:
   comments: {}
-  sdkClassName: SDK
+  sdkClassName: Mobula
   repoURL: https://github.com/anouci/mobula-api-sdk.git
   usageSnippets:
     optionalPropertyRendering: withExample
@@ -32,7 +32,7 @@ typescript:
       shared: sdk/models/shared
       webhooks: sdk/models/webhooks
   inputModelSuffix: input
-  maxMethodParams: 4
+  maxMethodParams: 0
   outputModelSuffix: output
   packageName: mobula-sdk
   templateVersion: v1
