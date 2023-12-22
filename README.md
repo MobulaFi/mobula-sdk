@@ -7,28 +7,34 @@
     </a>
 </div>
 
+# Getting Started with Mobula API SDK
 
-## 🏗 **Welcome to your new SDK!** 🏗
+Mobula empowers builders with top-tier APIs for market data, wallet data & DeFi quotes. Industry-leading coverage & granularity, SQL queries, and high flexibility.
 
-It has been generated successfully based on your OpenAPI spec. However, it is not yet ready for production use. Here are some next steps:
-- [ ] 🛠 Make your SDK feel handcrafted by [customizing it](https://www.speakeasyapi.dev/docs/customize-sdks)
-- [ ] ♻️ Refine your SDK quickly by iterating locally with the [Speakeasy CLI](https://github.com/speakeasy-api/speakeasy)
-- [ ] 🎁 Publish your SDK to package managers by [configuring automatic publishing](https://www.speakeasyapi.dev/docs/productionize-sdks/publish-sdks)
-- [ ] ✨ When ready to productionize, delete this section from the README
+## 📑 Table of Contents
 
-<!-- Start SDK Installation [installation] -->
-## SDK Installation
+- [Introduction](#-introduction)
+- [Generate API Key](#-generate-api-key)
+- [Installation](#-installation)
+- [Documentation](#-documentation)
+- [Upgrade](#-upgrade)
+- [Support](#-support)
+
+## 🌟 Introduction
+
+With the Mobula API SDK, you can seamlessly integrate real-time crypto metrics into your projects. Whether you're building a new crypto dashboard or just exploring the world of cryptocurrencies, Mobula API SDK has got you covered.
+
+## 🔑 Generate API Key
+
+For an enhanced experience, acquire an API key. Generate your key and select a plan fitting your project [here](https://docs.mobula.fi/api-reference/authentification).
+
+<!-- Start  Installation [installation] -->
+## 📦 Installation
 
 ### NPM
 
 ```bash
-npm add https://github.com/anouci/mobula-sdk
-```
-
-### Yarn
-
-```bash
-yarn add https://github.com/anouci/mobula-sdk
+npm mobula-sdk
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -61,28 +67,30 @@ run();
 ```
 <!-- End SDK Example Usage [usage] -->
 
-<!-- Start Available Resources and Operations [operations] -->
-## Available Resources and Operations
+## 📚 Documentation
+
+- [Getting Started](https://docs.mobula.fi/sdk/introduction)
+- [Index](https://docs.mobula.fi/sdk/methods_index)
 
 ### [Mobula SDK](docs/sdks/mobula/README.md)
 
-* [searchCryptoByName](docs/sdks/mobula/README.md#searchcryptobyname)
+* [searchCryptoByName](docs/sdks/mobula/README.md#searchcryptobyname) - Search crypto data with asset name
 * [fetchAllCryptoDetails](docs/sdks/mobula/README.md#fetchallcryptodetails) - Get all crypto data with extra fields as needed
 * [fetchAssetMarketData](docs/sdks/mobula/README.md#fetchassetmarketdata) - Get the market metrics for any asset
 * [fetchAssetMarketHistory](docs/sdks/mobula/README.md#fetchassetmarkethistory) - Get the market metrics of an asset over a given timeframe
-* [fetchAssetMetadata](docs/sdks/mobula/README.md#fetchassetmetadata)
-* [fetchAssetTradeHistory](docs/sdks/mobula/README.md#fetchassettradehistory) - Retrieve trade history for a given asset.
-* [fetchMultipleAssetMarketData](docs/sdks/mobula/README.md#fetchmultipleassetmarketdata)
+* [fetchAssetMetadata](docs/sdks/mobula/README.md#fetchassetmetadata) - Get the metadata of an asset.
+* [fetchAssetTradeHistory](docs/sdks/mobula/README.md#fetchassettradehistory) - Retrieve trade history for a given asset
+* [fetchMultipleAssetMarketData](docs/sdks/mobula/README.md#fetchmultipleassetmarketdata) - Get the market metrics for multiple assets at one time
 * [fetchPairMarketData](docs/sdks/mobula/README.md#fetchpairmarketdata) - Get the market metrics for any DEX pair
 * [fetchPairsMarketData](docs/sdks/mobula/README.md#fetchpairsmarketdata) - Fetch all DEX pairs from a specific asset
 * [fetchWalletHistoryBalance](docs/sdks/mobula/README.md#fetchwallethistorybalance) - Get the historical balance of any EVM-compatible wallets, at any time
-* [fetchWalletHoldings](docs/sdks/mobula/README.md#fetchwalletholdings) - Fetch Wallet Portfolio
-* [fetchWalletNFTs](docs/sdks/mobula/README.md#fetchwalletnfts) - Get Portfolio
+* [fetchWalletHoldings](docs/sdks/mobula/README.md#fetchwalletholdings) - Fetch wallet holdings 
+* [fetchWalletNFTs](docs/sdks/mobula/README.md#fetchwalletnfts) - Fetch wallet NFTs
 * [fetchWalletTransactions](docs/sdks/mobula/README.md#fetchwallettransactions) - Fetch Wallet Transactions
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Error Handling [errors] -->
-## Error Handling
+### Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
 
@@ -122,134 +130,22 @@ run();
 ```
 <!-- End Error Handling [errors] -->
 
-<!-- Start Server Selection [server] -->
-## Server Selection
+## 🔄 Upgrade
 
-### Select Server by Index
+Upgrade plans:
 
-You can override the default server globally by passing a server index to the `serverIdx: number` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+| Plan       | Credits/month | Support                                      | Price/month | Link                                                         |
+| ---------- | ------------- | -------------------------------------------- | ----------- | ------------------------------------------------------------ |
+| Free       | 300,000       | 24/7 support on Telegram, Discord, and Slack | $0          | [Link](https://docs.mobula.fi/api-reference/introduction)    |
+| Premium    | 1,500,000     | 24/7 support on Telegram, Discord, and Slack | $250        | [Upgrade now](https://admin.mobula.fi/)                      |
+| Advanced   | 5,000,000     | 24/7 support on Telegram, Discord, and Slack | $750        | [Upgrade now](https://admin.mobula.fi/)                      |
+| Enterprise | Unlimited     | 24/7 support, custom endpoints, 99.9% SLA    | from $750   | [Contact us](https://t.me/MobulaPartnerBot?start=Enterprise) |
 
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://api.mobula.io/api/1` | None |
+## 📞 Support
 
-#### Example
+Need assistance? Contact our support bot on [Telegram: Bot Support](https://t.me/MobulaPartnerBot?start=Mobula_SDK_Support_Github)
 
-```typescript
-import { Mobula } from "mobula-sdk";
+---
 
-async function run() {
-    const sdk = new Mobula({
-        serverIdx: 0,
-        apiKeyAuth: "<YOUR_API_KEY_HERE>",
-    });
+Crafted with 💙 by Mobula for builders like you
 
-    const res = await sdk.searchCryptoByName({
-        name: "bitcoin",
-    });
-
-    if (res.statusCode == 200) {
-        // handle response
-    }
-}
-
-run();
-
-```
-
-
-### Override Server URL Per-Client
-
-The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
-```typescript
-import { Mobula } from "mobula-sdk";
-
-async function run() {
-    const sdk = new Mobula({
-        serverURL: "https://api.mobula.io/api/1",
-        apiKeyAuth: "<YOUR_API_KEY_HERE>",
-    });
-
-    const res = await sdk.searchCryptoByName({
-        name: "bitcoin",
-    });
-
-    if (res.statusCode == 200) {
-        // handle response
-    }
-}
-
-run();
-
-```
-<!-- End Server Selection [server] -->
-
-<!-- Start Custom HTTP Client [http-client] -->
-## Custom HTTP Client
-
-The Typescript SDK makes API calls using the [axios](https://axios-http.com/docs/intro) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
-
-For example, you could specify a header for every request that your sdk makes as follows:
-
-```typescript
-import { mobula-sdk } from "Mobula";
-import axios from "axios";
-
-const httpClient = axios.create({
-    headers: {'x-custom-header': 'someValue'}
-})
-
-const sdk = new Mobula({defaultClient: httpClient});
-```
-<!-- End Custom HTTP Client [http-client] -->
-
-<!-- Start Authentication [security] -->
-## Authentication
-
-### Per-Client Security Schemes
-
-This SDK supports the following security scheme globally:
-
-| Name         | Type         | Scheme       |
-| ------------ | ------------ | ------------ |
-| `apiKeyAuth` | apiKey       | API key      |
-
-To authenticate with the API the `apiKeyAuth` parameter must be set when initializing the SDK client instance. For example:
-```typescript
-import { Mobula } from "mobula-sdk";
-
-async function run() {
-    const sdk = new Mobula({
-        apiKeyAuth: "<YOUR_API_KEY_HERE>",
-    });
-
-    const res = await sdk.searchCryptoByName({
-        name: "bitcoin",
-    });
-
-    if (res.statusCode == 200) {
-        // handle response
-    }
-}
-
-run();
-
-```
-<!-- End Authentication [security] -->
-
-<!-- Placeholder for Future Speakeasy SDK Sections -->
-
-# Development
-
-## Maturity
-
-This SDK is in beta, and there may be breaking changes between versions without a major version update. Therefore, we recommend pinning usage
-to a specific package version. This way, you can install the same version each time without breaking changes unless you are intentionally
-looking for the latest version.
-
-## Contributions
-
-While we value open-source contributions to this SDK, this library is generated programmatically.
-Feel free to open a PR or a Github issue as a proof of concept and we'll do our best to include it in a future release!
-
-### SDK Created by [Speakeasy](https://docs.speakeasyapi.dev/docs/using-speakeasy/client-sdks)
