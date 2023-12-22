@@ -1,3 +1,5 @@
+![cover](https://i.imgur.com/8evrRT0.png)
+
 # Getting Started with Mobula API SDK
 
 Mobula empowers builders with top-tier APIs for market data, wallet data & DeFi quotes. Industry-leading coverage & granularity, SQL queries, and high flexibility.
