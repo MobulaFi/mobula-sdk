@@ -1,12 +1,3 @@
-# openapi
-
-<div align="left">
-    <a href="https://speakeasyapi.dev/"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
-    <a href="https://opensource.org/licenses/MIT">
-        <img src="https://img.shields.io/badge/License-MIT-blue.svg" style="width: 100px; height: 28px;" />
-    </a>
-</div>
-
 # Getting Started with Mobula API SDK
 
 Mobula empowers builders with top-tier APIs for market data, wallet data & DeFi quotes. Industry-leading coverage & granularity, SQL queries, and high flexibility.
@@ -70,10 +61,8 @@ run();
 ## 📚 Documentation
 
 - [Getting Started](https://docs.mobula.fi/sdk/introduction)
-- [Index](https://docs.mobula.fi/sdk/methods_index)
-
-### [Mobula SDK](docs/sdks/mobula/README.md)
-
+  
+### Index
 * [searchCryptoByName](docs/sdks/mobula/README.md#searchcryptobyname) - Search crypto data with asset name
 * [fetchAllCryptoDetails](docs/sdks/mobula/README.md#fetchallcryptodetails) - Get all crypto data with extra fields as needed
 * [fetchAssetMarketData](docs/sdks/mobula/README.md#fetchassetmarketdata) - Get the market metrics for any asset
