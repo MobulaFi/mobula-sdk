@@ -2,12 +2,12 @@ configVersion: 1.0.0
 management:
   docChecksum: 323731cb79f4e3786e343530951ebe9f
   docVersion: v1
-  speakeasyVersion: 1.128.1
-  generationVersion: 2.223.0
+  speakeasyVersion: 1.129.1
+  generationVersion: 2.223.3
 generation:
   comments: {}
   sdkClassName: Mobula
-  repoURL: https://github.com/anouci/mobula-sdk.git
+  repoURL: https://github.com/MobulaFi/mobula-sdk.git
   usageSnippets:
     optionalPropertyRendering: withExample
   fixes:
@@ -15,13 +15,13 @@ generation:
   useClassNamesForArrayFields: true
 features:
   typescript:
-    core: 3.3.9
+    core: 3.3.12
     examples: 2.81.3
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.1
     ignores: 2.81.1
 typescript:
-  version: 0.2.2
+  version: 0.2.3
   author: Mobula Labs
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: true
@@ -34,7 +34,7 @@ typescript:
       shared: sdk/models/shared
       webhooks: sdk/models/webhooks
   inputModelSuffix: input
-  installationURL: https://github.com/anouci/mobula-sdk
+  installationURL: https://github.com/MobulaFi/mobula-sdk
   maxMethodParams: 0
   outputModelSuffix: output
   packageName: mobula-sdk

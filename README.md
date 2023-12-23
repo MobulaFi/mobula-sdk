@@ -81,7 +81,7 @@ run();
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Error Handling [errors] -->
-### Error Handling
+## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
 
@@ -139,4 +139,126 @@ Need assistance? Contact our support bot on [Telegram: Bot Support](https://t.me
 ---
 
 Crafted with 💙 by Mobula for builders like you
+
+
+<!-- No SDK Installation -->
+<!-- No SDK Example Usage -->
+<!-- No SDK Available Operations -->
+<!-- Start Server Selection [server] -->
+## Server Selection
+
+### Select Server by Index
+
+You can override the default server globally by passing a server index to the `serverIdx: number` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `https://api.mobula.io/api/1` | None |
+
+#### Example
+
+```typescript
+import { Mobula } from "mobula-sdk";
+
+async function run() {
+    const sdk = new Mobula({
+        serverIdx: 0,
+        apiKeyAuth: "<YOUR_API_KEY_HERE>",
+    });
+
+    const res = await sdk.searchCryptoByName({
+        name: "bitcoin",
+    });
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+}
+
+run();
+
+```
+
+
+### Override Server URL Per-Client
+
+The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
+```typescript
+import { Mobula } from "mobula-sdk";
+
+async function run() {
+    const sdk = new Mobula({
+        serverURL: "https://api.mobula.io/api/1",
+        apiKeyAuth: "<YOUR_API_KEY_HERE>",
+    });
+
+    const res = await sdk.searchCryptoByName({
+        name: "bitcoin",
+    });
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+}
+
+run();
+
+```
+<!-- End Server Selection [server] -->
+
+<!-- Start Custom HTTP Client [http-client] -->
+## Custom HTTP Client
+
+The Typescript SDK makes API calls using the [axios](https://axios-http.com/docs/intro) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
+
+For example, you could specify a header for every request that your sdk makes as follows:
+
+```typescript
+import { mobula-sdk } from "Mobula";
+import axios from "axios";
+
+const httpClient = axios.create({
+    headers: {'x-custom-header': 'someValue'}
+})
+
+const sdk = new Mobula({defaultClient: httpClient});
+```
+<!-- End Custom HTTP Client [http-client] -->
+
+<!-- Start Authentication [security] -->
+## Authentication
+
+### Per-Client Security Schemes
+
+This SDK supports the following security scheme globally:
+
+| Name         | Type         | Scheme       |
+| ------------ | ------------ | ------------ |
+| `apiKeyAuth` | apiKey       | API key      |
+
+To authenticate with the API the `apiKeyAuth` parameter must be set when initializing the SDK client instance. For example:
+```typescript
+import { Mobula } from "mobula-sdk";
+
+async function run() {
+    const sdk = new Mobula({
+        apiKeyAuth: "<YOUR_API_KEY_HERE>",
+    });
+
+    const res = await sdk.searchCryptoByName({
+        name: "bitcoin",
+    });
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+}
+
+run();
+
+```
+<!-- End Authentication [security] -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
 
