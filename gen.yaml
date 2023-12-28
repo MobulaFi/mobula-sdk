@@ -1,6 +1,6 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 540a528c8621f88cf09547aa8be9fef4
+  docChecksum: fe59a26772e70c4e2bfb9650e9befd72
   docVersion: v1
   speakeasyVersion: 1.129.1
   generationVersion: 2.223.3
@@ -21,7 +21,7 @@ features:
     globalServerURLs: 2.82.1
     ignores: 2.81.1
 typescript:
-  version: 0.2.4
+  version: 0.2.5
   author: Mobula Labs
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: true

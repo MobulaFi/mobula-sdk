@@ -28,6 +28,20 @@ export class CryptoData extends SpeakeasyBase {
     id?: number;
 
     /**
+     * Liquidity
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "liquidity" })
+    liquidity?: number;
+
+    /**
+     * Market cap
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "market_cap" })
+    marketCap?: number;
+
+    /**
      * The name of the cryptocurrency
      */
     @SpeakeasyMetadata()
@@ -35,11 +49,46 @@ export class CryptoData extends SpeakeasyBase {
     name?: string;
 
     /**
+     * Price
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "price" })
+    price?: number;
+
+    /**
+     * Price change 1h
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "price_change_1h" })
+    priceChange1h?: number;
+
+    /**
+     * Price change 1y
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "price_change_1y" })
+    priceChange1y?: number;
+
+    /**
      * Price change 24h
      */
     @SpeakeasyMetadata()
     @Expose({ name: "price_change_24h" })
     priceChange24h?: number;
+
+    /**
+     * Price change 30d
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "price_change_30d" })
+    priceChange30d?: number;
+
+    /**
+     * Price change 7d
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "price_change_7d" })
+    priceChange7d?: number;
 
     /**
      * The symbol of the cryptocurrency
