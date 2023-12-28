@@ -103,6 +103,11 @@ components:
           description: The symbol of the cryptocurrency
           type: string
           nullable: true
+        price_change_24h:
+          description: Price change 24h
+          type: number
+          format: float
+          nullable: true
       type: object
     ErrorResponse:
       properties:

@@ -35,6 +35,13 @@ export class CryptoData extends SpeakeasyBase {
     name?: string;
 
     /**
+     * Price change 24h
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "price_change_24h" })
+    priceChange24h?: number;
+
+    /**
      * The symbol of the cryptocurrency
      */
     @SpeakeasyMetadata()

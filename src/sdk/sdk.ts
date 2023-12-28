@@ -47,9 +47,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "v1";
-    sdkVersion = "0.2.3";
+    sdkVersion = "0.2.4";
     genVersion = "2.223.3";
-    userAgent = "speakeasy-sdk/typescript 0.2.3 2.223.3 v1 mobula-sdk";
+    userAgent = "speakeasy-sdk/typescript 0.2.4 2.223.3 v1 mobula-sdk";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
