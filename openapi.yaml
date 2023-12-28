@@ -90,6 +90,9 @@ components:
         id:
           description: The unique identifier of the cryptocurrency
           type: integer
+        logo:
+          description: Logo
+          type: string
         name:
           description: The name of the cryptocurrency
           type: string
