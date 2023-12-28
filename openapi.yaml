@@ -103,8 +103,43 @@ components:
           description: The symbol of the cryptocurrency
           type: string
           nullable: true
+        price:
+          description: Price
+          type: number
+          format: float
+          nullable: true
+        market_cap:
+          description: Market cap
+          type: number
+          format: float
+          nullable: true
+        liquidity:
+          description: Liquidity
+          type: number
+          format: float
+          nullable: true
         price_change_24h:
           description: Price change 24h
+          type: number
+          format: float
+          nullable: true
+        price_change_1h:
+          description: Price change 1h
+          type: number
+          format: float
+          nullable: true
+        price_change_7d:
+          description: Price change 7d
+          type: number
+          format: float
+          nullable: true
+        price_change_30d:
+          description: Price change 30d
+          type: number
+          format: float
+          nullable: true
+        price_change_1y:
+          description: Price change 1y
           type: number
           format: float
           nullable: true
