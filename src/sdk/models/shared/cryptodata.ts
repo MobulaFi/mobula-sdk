@@ -35,6 +35,13 @@ export class CryptoData extends SpeakeasyBase {
     liquidity?: number;
 
     /**
+     * Logo
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "logo" })
+    logo?: string;
+
+    /**
      * Market cap
      */
     @SpeakeasyMetadata()

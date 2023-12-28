@@ -9,6 +9,7 @@
 | `contracts`                                        | *string*[]                                         | :heavy_minus_sign:                                 | The contracts associated with the cryptocurrency   |
 | `id`                                               | *number*                                           | :heavy_minus_sign:                                 | The unique identifier of the cryptocurrency        |
 | `liquidity`                                        | *number*                                           | :heavy_minus_sign:                                 | Liquidity                                          |
+| `logo`                                             | *string*                                           | :heavy_minus_sign:                                 | Logo                                               |
 | `marketCap`                                        | *number*                                           | :heavy_minus_sign:                                 | Market cap                                         |
 | `name`                                             | *string*                                           | :heavy_minus_sign:                                 | The name of the cryptocurrency                     |
 | `price`                                            | *number*                                           | :heavy_minus_sign:                                 | Price                                              |
