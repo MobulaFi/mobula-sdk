@@ -4,7 +4,7 @@
 ## Fields
 
 | Field                                              | Type                                               | Required                                           | Description                                        |
-| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+|----------------------------------------------------|----------------------------------------------------| -------------------------------------------------- |----------------------------------------------------|
 | `blockchains`                                      | *string*[]                                         | :heavy_minus_sign:                                 | The blockchains on which the cryptocurrency exists |
 | `contracts`                                        | *string*[]                                         | :heavy_minus_sign:                                 | The contracts associated with the cryptocurrency   |
 | `id`                                               | *number*                                           | :heavy_minus_sign:                                 | The unique identifier of the cryptocurrency        |
@@ -19,3 +19,4 @@
 | `priceChange30d`                                   | *number*                                           | :heavy_minus_sign:                                 | Price change 30d                                   |
 | `priceChange7d`                                    | *number*                                           | :heavy_minus_sign:                                 | Price change 7d                                    |
 | `symbol`                                           | *string*                                           | :heavy_minus_sign:                                 | The symbol of the cryptocurrency                   |
+| `decimals`                                         | *number*[]                                         | :heavy_minus_sign:                                 | The decimals of the cryptocurrency                 |
